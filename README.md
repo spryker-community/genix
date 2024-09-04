@@ -33,7 +33,7 @@ GeniX empowers you by simplifying complex tasks, making the coding process faste
     
 Clone the repository and install the necessary dependencies:
 
-    git clone [https://github.com/volhov-node/genix.git](https://github.com/spryker-community/genix/tree/main)
+    git clone https://github.com/spryker-community/genix
     cd genix
 
 To run on the host machine run following command:
