@@ -12,35 +12,38 @@ GeniX empowers you by simplifying complex tasks, making the coding process faste
 
 ## Key Features
 
-	• Interactive Terminal: Our Node.js-powered CLI guides you through the process of creating a new module by asking relevant questions and providing necessary information.
-	• Module Scaffolding: Automatically generate the structure of a new PHP module, including all essential service files and Spryker-related configuration files.
-	• Plugin Code Generation: Easily create plugin classes with minimal effort. Let the generator handle the boilerplate code while you focus on the logic.
-	• GitHub Integration: Create a new repository on GitHub and push your newly created module directly from the terminal.
-	• Module Integration: Seamlessly integrate the new module into your existing Spryker project, ensuring a smooth and efficient workflow.
-	• Project Management: Manage multiple Spryker projects connected to the tool with ease. Switch between projects effortlessly, and keep your work organized.
-    • Security: Tool configuration is encrypted and accessible only to you, secured by a password that you can set according to your preferences.
+* Interactive Terminal: Our Node.js-powered CLI guides you through the process of creating a new module by asking relevant questions and providing necessary information.
+* Module Scaffolding: Automatically generate the structure of a new PHP module, including all essential service files and Spryker-related configuration files.
+* Plugin Code Generation: Easily create plugin classes with minimal effort. Let the generator handle the boilerplate code while you focus on the logic.
+* GitHub Integration: Create a new repository on GitHub and push your newly created module directly from the terminal.
+* Module Integration: Seamlessly integrate the new module into your existing Spryker project, ensuring a smooth and efficient workflow.
+* Project Management: Manage multiple Spryker projects connected to the tool with ease. Switch between projects effortlessly, and keep your work organized.
+* Security: Tool configuration is encrypted and accessible only to you, secured by a password that you can set according to your preferences.
 
 ## Getting Started
 
 ### Prerequisites
 
-	•	Node.js (version 16 or higher)
-	•	NPM (version 6 or higher)
-	•	GitHub Account with access to create repositories
-	•	Spryker Commerce OS installed on your local environment
+* Node.js (version 16 or higher)
+* NPM (version 6 or higher)
+* GitHub Account with access to create repositories
+* Spryker Commerce OS installed on your local environment
 
 ### Installation
     
 Clone the repository and install the necessary dependencies:
 
-    git clone https://github.com/spryker-community/genix
+    git clone https://github.com/spryker-community/genix.git
+
+Switch to the project folder: 
+
     cd genix
 
-To run on the host machine run following command:
+To run on the host machine run the following command:
 
     npm install
 
-To run inside docker container:
+To run inside the docker container:
 
     docker-compose run --rm  genix
     
@@ -51,7 +54,7 @@ To start the interactive terminal:
 
     genix
 
-Follow the prompts to generate a new module, create plugins, and integrate with your Spryker project.
+You can follow the prompts to generate a new module, create plugins, and integrate with your Spryker project.
 
 ## Contributing
 
