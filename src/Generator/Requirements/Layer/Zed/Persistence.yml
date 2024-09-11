@@ -1,0 +1,23 @@
+layer: zed
+subLayer: persistence
+questions:
+  1:
+    name: persistenceTableName
+    copyTo: DomainName
+    type: input
+    required: true
+    confirmBeforeAsk: true
+    confirmMessage: "Do you want to create a table in Persistence layer?"
+    message: "Please define a table name:"
+resources: [
+  { name: 'Persistence/[ModuleName]EntityManagerInterface.php', type: file, template: '', placeholder: [ ModuleName ] },
+  { name: 'Persistence/[ModuleName]EntityManager.php', type: file, template: '', placeholder: [ ModuleName ] },
+  { name: 'Persistence/[ModuleName]QueryContainer.php', type: file, template: '', placeholder: [ ModuleName ] },
+  { name: 'Persistence/[ModuleName]PersistenceFactory.php', type: file, template: '', placeholder: [ ModuleName ] },
+  { name: 'Persistence/[ModuleName]RepositoryInterface.php', type: file, template: '', placeholder: [ ModuleName ] },
+  { name: 'Persistence/[ModuleName]Repository.php', type: file, template: '', placeholder: [ ModuleName ] },
+  { name: 'Persistence/Propel/Abstract[persistenceTableName].php', type: file, template: '', placeholder: [ { name: persistenceTableName, transform: [ toLower, camelCase, upperFirst ] } ] },
+  { name: 'Persistence/Propel/AbstractSpy[persistenceTableName]Query.php', type: file, template: '', placeholder: [ { name: persistenceTableName, transform: [ toLower, camelCase, upperFirst ] } ] },
+  { name: 'Persistence/Propel/Mapper/[ModuleName]Mapper.php', type: file, template: '', placeholder: [ ModuleName ] },
+  { name: 'Persistence/Propel/Schema/[Organisation]_[DomainName].schema.xml', type: file, template: '', placeholder: [ { name: Organisation, transform: [ lowerCase. toLower, snakeCase ] }, { name: DomainName, transform: [ toLower, snakeCase ] } ] },
+]

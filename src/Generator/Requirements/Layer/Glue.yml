@@ -1,0 +1,22 @@
+questions:
+  step_1:
+    name: "glue"
+    type: "multiselect"
+    message: "What would you like to include to the Glue layer?"
+    path: "/src/Generator/Requirements/Layer/Glue"
+    required: true
+    choices: [
+      { name: 'controller', value: 'controller' },
+      { name: 'dependency', value: 'dependency' },
+      { name: 'plugin', value: 'plugin' },
+    ]
+resources: [
+  { name: '[ModuleName]Config.php', type: file, template: 'Generator/Templates/Php/ModuleConfig.tpl', placeholder:
+    [
+      ModuleName,
+      {name: Namespace, transform: []}
+    ]
+  },
+  { name: '[ModuleName]DependencyProvider.php', type: file, template: '', placeholder: [ ModuleName, Namespace ] },
+  { name: '[ModuleName]Factory.php', type: file, template: '', placeholder: [ ModuleName, Namespace ] },
+]

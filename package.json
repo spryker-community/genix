@@ -1,0 +1,52 @@
+{
+  "name": "spryker-accelerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "type": "module",
+  "bin": {
+    "genixd": "./dist/index.js",
+    "genix": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "generate": "tsx src/cli/generate.ts",
+    "sprykerInfo": "tsx src/cli/collectSprykerInfo.ts",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.22.2",
+    "@types/cli-progress": "^3.11.6",
+    "@types/figlet": "^1.5.8",
+    "@types/inquirer": "^9.0.7",
+    "@types/js-yaml": "^4.0.9",
+    "@types/lodash": "^4.17.6",
+    "@types/ndjson": "^2.0.4",
+    "@types/node": "^20.14.9",
+    "@types/shelljs": "^0.8.15",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@octokit/rest": "^21.0.1",
+    "chalk": "^5.3.0",
+    "cli-progress": "^3.12.0",
+    "figlet": "^1.7.0",
+    "glob": "^11.0.0",
+    "inquirer": "^10.1.8",
+    "install": "^0.13.0",
+    "latest": "^0.2.0",
+    "lodash": "^4.17.21",
+    "ndjson": "^2.0.0",
+    "npm": "^10.8.3",
+    "php-parser": "^3.1.5",
+    "shelljs": "^0.8.5",
+    "yaml": "^2.5.1"
+  }
+}

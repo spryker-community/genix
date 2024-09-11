@@ -1,0 +1,21 @@
+questions:
+  step_1:
+    name: "project"
+    type: "list"
+    message: "Please select project you would like to use as active:"
+    path: ""
+    required: true
+    choices: [
+
+    ]
+  step_2:
+    name: "vendor"
+    type: "input"
+    required: true
+    message: "What is the target vendor name?"
+  step_3:
+    name: "githubKey"
+    type: "password"
+    required: true
+    message: "Please provide GitHubKey to streamline integration"
+resources: []

@@ -1,0 +1,14 @@
+tsconfig.tsbuildinfo
+.idea
+node_modules
+.lh
+/spryk/modules/
+/spryk/generated/
+/vendor
+/.githubauth.json
+.env
+/.config.json
+/data/b2b-demo-shop/
+/data/suite-nonsplit/
+/dist/
+/src/Php/vendor/

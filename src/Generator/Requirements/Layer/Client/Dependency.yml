@@ -1,0 +1,11 @@
+questions:
+  step_1:
+    name: "client_dependency"
+    type: "multiselect"
+    message: "Which dependency type you would like to use inside Client layer?"
+    choices: [
+      { name: 'client', value: 'client' },
+      { name: 'service', value: 'service' },
+      { name: 'plugin', value: 'plugin' },
+    ]
+

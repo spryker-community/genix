@@ -1,0 +1,14 @@
+questions:
+  step_1:
+    name: "zed_dependency_"
+    type: "multiselect"
+    message: "Which dependency type you would like to use inside Zed layer?"
+    path: "/src/Generator/Requirements/Layer/Zed/"
+    choices: [
+      { name: 'client', value: 'client' },
+      { name: 'facade', va    lue: 'facade' },
+      { name: 'queryContainer', value: 'queryContainer' },
+      { name: 'service', value: 'service' },
+      { name: 'plugin', value: 'plugin' },
+    ]
+

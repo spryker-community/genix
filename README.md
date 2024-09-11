@@ -2,10 +2,10 @@
 
 ## Overview
 
-Welcome to GeniX – the ultimate companion for developers working with Spryker Commerce OS. 
+Welcome to GeniX – the ultimate companion for developers working with Spryker Commerce OS.
 This powerful and interactive solution is designed to optimize and accelerate the module development process, allowing you to focus on delivering high-quality results for your clients.
 
-With GeniX, you can effortlessly scaffold new PHP modules, generate code for plugins, manage multiple projects, and integrate your modules seamlessly into local Spryker environments. 
+With GeniX, you can effortlessly scaffold new PHP modules, generate code for plugins, manage multiple projects, and integrate your modules seamlessly into local Spryker environments.
 All of this is managed through a streamlined, intuitive terminal interface that enhances your workflow and productivity.
 
 GeniX empowers you by simplifying complex tasks, making the coding process faster, smoother, and more efficient, enabling you to meet deadlines with ease while maintaining the highest standards of quality.
@@ -24,29 +24,26 @@ GeniX empowers you by simplifying complex tasks, making the coding process faste
 
 ### Prerequisites
 
-* Node.js (version 16 or higher)
-* NPM (version 6 or higher)
+* Node.js (version v20 or higher)
+* NPM (version 10 or higher)
 * GitHub Account with access to create repositories
 * Spryker Commerce OS installed on your local environment
 
 ### Installation
-    
+
 Clone the repository and install the necessary dependencies:
 
     git clone https://github.com/spryker-community/genix.git
 
-Switch to the project folder: 
+Switch to the project folder:
 
     cd genix
 
-To run on the host machine run the following command:
 
-    npm install
-
-To run inside the docker container:
+Start docker container:
 
     docker-compose run --rm  genix
-    
+
 
 ### Usage
 
@@ -58,7 +55,7 @@ You can follow the prompts to generate a new module, create plugins, and integra
 
 ## Contributing
 
-We welcome contributions from the community! Please submit your pull requests, and we’ll review them as soon as possible. 
+We welcome contributions from the community! Please submit your pull requests, and we’ll review them as soon as possible.
 For major changes, please open an issue first to discuss what you would like to change.
 
 ## License

@@ -1,0 +1,13 @@
+questions:
+  step_1:
+    name: "glue_dependency"
+    type: "multiselect"
+    message: "Which dependency type you would like to use inside Glue layer?"
+    choices: [
+      { name: 'client', value: 'client' },
+      { name: 'facade', value: 'facade' },
+      { name: 'queryContainer', value: 'queryContainer' },
+      { name: 'service', value: 'service' },
+      { name: 'plugin', value: 'plugin' },
+    ]
+

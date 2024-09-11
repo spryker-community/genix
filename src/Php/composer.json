@@ -1,0 +1,27 @@
+{
+    "name": "volhov-php/integrator",
+    "type": "library",
+    "require": {
+        "nikic/php-parser": "^5.1",
+        "symfony/yaml": "^7.1",
+        "spryker/architecture-sniffer": "^0.5.5",
+        "spryker/code-sniffer": "^0.17.18"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "VolhovPhp\\Integrator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eduard Melnytskyi",
+            "email": "volhovm6@gmail.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

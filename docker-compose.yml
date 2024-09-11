@@ -1,0 +1,32 @@
+x-base-services:
+    ssh: &ssh "~/.ssh:/root/.ssh"
+    composer: &composer  '~/.composer:/home/docker/.composer:cached'
+    git-config: &git-config  '~/.gitconfig:/root/.gitconfig'
+    ssh-auth: &ssh-auth   '${SSH_AUTH_SOCK}:/ssh-agent:ro'
+
+services:
+    genix:
+        build:
+            context: .
+            dockerfile: ./docker/local.Dockerfile
+        ports:
+            - "9003:9003"
+        volumes:
+            - .:/data
+            - ${PROJECTS_DIRECTORY:-./}:/projects
+            - ./spryk/bash_history:/root/.bash_history
+            - *ssh
+            - *composer
+            - *ssh-auth
+            - *git-config
+        working_dir: /data
+        tty: true
+        command: sh -c "npm install --prefix /data --include=dev && npm run build && npm link && composer install -d  /data/src/Php && bash"
+        environment:
+            COMPOSER_HOME: '/home/docker/.composer'
+            SSH_AUTH_SOCK: '/ssh-agent'
+            NODE_WORKING_DIR: /data
+            PROJECTS_DIRECTORY: ${PROJECTS_DIRECTORY:-./}
+            APP_DEBUG: 0
+            IS_DOCKER: 1
+            NODE_PATH: /data/node_modules

@@ -1,0 +1,17 @@
+questions:
+  step_1:
+    name: "layer"
+    type: "multiselect"
+    message: "What is the target application layer?"
+    path: "/src/Generator/Requirements/Layer"
+    required: true
+    choices: [
+      { name: 'zed', value: 'zed' },
+#      { name: 'yves', value: 'yves' },
+#      { name: 'glue', value: 'glue' },
+#      { name: 'client', value: 'client' },
+#      { name: 'service', value: 'service' },
+#      { name: 'shared', value: 'shared' },
+    ]
+
+resources: []

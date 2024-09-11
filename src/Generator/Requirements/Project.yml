@@ -1,0 +1,10 @@
+questions:
+  step_1:
+    name: "project"
+    type: "list"
+    message: "Please select project you would like to add to the tool:"
+    path: ""
+    required: true
+    choices: []
+    choiceProvider: ./ChoiceProvider/ProjectList
+resources: []

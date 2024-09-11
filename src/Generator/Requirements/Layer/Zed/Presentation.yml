@@ -1,0 +1,48 @@
+layer: zed
+subLayer: presentation
+questions:
+  step_1:
+    name: "layoutName"
+    type: "input"
+    required: true
+    message: "Please define a layout name:"
+    resources: [
+      {
+        name: 'Presentation/Layout/[layoutName].twig',
+        type: file,
+        template: '',
+        placeholder: [
+          { name: layoutName, transform: [ lowerCase. toLower, camelCase ] }
+        ]
+      },
+    ]
+  step_2:
+    name: "nameOfController"
+    type: "input"
+    required: true
+    message: "Please define a Controller name:"
+    resources: [
+      {
+        name: 'Presentation/[nameOfController]',
+        type: dir,
+        placeholder: [
+          { name: nameOfController, transform: [ lowerCase. toLower, camelCase ] }
+        ]
+      }
+    ]
+  step_3:
+    name: "nameOfAction"
+    type: "input"
+    required: true
+    message: "Please define a Controller Action name:"
+    resources: [
+      {
+        name: 'Presentation/Layout/[nameOfController]/[nameOfAction].twig',
+        type: file,
+        template: '',
+        placeholder: [
+          { name: nameOfController, transform: [ lowerCase. toLower, camelCase, upperFirst ] },
+          { name: nameOfAction, transform: [ lowerCase. toLower, camelCase, upperFirst ] }
+        ]
+      },
+    ]

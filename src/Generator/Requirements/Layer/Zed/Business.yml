@@ -1,0 +1,7 @@
+layer: zed
+subLayer: business
+resources: [
+  { name: 'Business/[ModuleName]BusinessFactory.php', type: file, processor: ./Processor/Php/BusinessFactory, template: '', placeholder: [ModuleName]},
+  { name: 'Business/[ModuleName]Facade.php', type: file, processor: ./Processor/Php/Facade, template: '', placeholder: [ModuleName] },
+  { name: 'Business/[ModuleName]FacadeInterface.php', type: file, processor: ./Processor/Php/Interface, template: '', placeholder: [ModuleName] },
+]

@@ -1,0 +1,22 @@
+questions:
+  step_1:
+    name: "client"
+    type: "multiselect"
+    message: "What would you like to include to the Client layer?"
+    path: "/src/Generator/Requirements/Layer/Client"
+    required: true
+    choices: [
+      { name: 'dependency', value: 'dependency' },
+      { name: 'plugin', value: 'plugin' },
+      { name: 'zed', value: 'yed' },
+    ]
+resources: [
+  { name: '[ModuleName]Config.php', type: file, template: 'Generator/Templates/Php/ModuleConfig.tpl', placeholder:
+    [
+      ModuleName,
+      {name: Namespace, transform: []}
+    ]
+  },
+  { name: '[ModuleName]DependencyProvider.php', type: file, template: '', placeholder: [ ModuleName, Namespace ] },
+  { name: '[ModuleName]Factory.php', type: file, template: '', placeholder: [ ModuleName, Namespace ] },
+]

@@ -1,0 +1,77 @@
+presentation:
+  layout:
+    files:
+      - '[moduleName].twig'
+  nameOfController:
+    files:
+      - 'name-of-action.twig'
+
+communication:
+  controller:
+    files:
+      - 'IndexController.php'
+      - 'GatewayController.php'
+      - '[Name]Controller.php'
+  customDirectory:
+    files:
+      - '[ModelName]Interface.php'
+      - '[ModelName].php'
+  plugin:
+    consumerModule:
+      files:
+        - '[PluginName]Plugin.php'
+  form:
+    files:
+      - '[Name]Form.php'
+    dataProvider:
+      files:
+        - '[Name]FormDataProvider.php'
+  table:
+    files:
+      - '[Name]Table.php'
+  files:
+    - 'navigation.xml'
+    - '[Module]CommunicationFactory.php'
+#  │
+#  ├── Business
+#  │   ├── [CustomDirectory]
+#  │   │   ├── [ModelName]Interface.php
+#  │   │   └── [ModelName].php
+#  │   ├── Exception
+#  │   ├── [Module]BusinessFactory.php
+#  │   ├── [Module]Facade.php
+#  │   └── [Module]FacadeInterface.php
+#  │
+#  ├── Persistence
+#  │   ├── [Module]EntityManagerInterface.php
+#  │   ├── [Module]EntityManager.php
+#  │   ├── [Module]QueryContainer.php
+#  │   ├── [Module]PersistenceFactory.php
+#  │   ├── [Module]RepositoryInterface.php
+#  │   ├── [Module]Repository.php
+#  │   └── Propel
+#  │       ├── Abstract[TableName].php
+#  │       ├── AbstractSpy[TableName]Query.php
+#  │       ├── Mapper
+#  │       │   └── [Module|Entity]Mapper.php
+#  │       └── Schema
+#  │           └── [organization_name]_[domain_name].schema.xml
+#  │
+#  ├── Dependency
+#  │   ├── Client
+#  │   │   ├── [Module]To[Module]ClientBridge.php
+#  │   │   └── [Module]To[Module]ClientInterface.php
+#  │   ├── Facade
+#  │   │   ├── [Module]To[Module]FacadeBridge.php
+#  │   │   └── [Module]To[Module]FacadeInterface.php
+#  │   ├── QueryContainer
+#  │   │   ├── [Module]To[Module]QueryContainerBridge.php
+#  │   │   └── [Module]To[Module]QueryContainerInterface.php
+#  │   ├── Service
+#  │   │   ├── [Module]To[Module]ServiceBridge.php
+#  │   │   └── [Module]To[Module]ServiceInterface.php
+#  │   └── Plugin
+#  │       └── [PluginInterfaceName]PluginInterface.php
+#  │
+#  ├── [Module]Config.php
+#  └── [Module]DependencyProvider.php

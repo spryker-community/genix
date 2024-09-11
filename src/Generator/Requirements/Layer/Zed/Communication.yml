@@ -1,0 +1,129 @@
+layer: zed
+subLayer: communication
+questions:
+  step_1:
+    name: "communicationControllerName"
+    type: "input"
+    required: true
+    message: "Please define a communication controller name:"
+    confirmBeforeAsk: true
+    skip: true
+    confirmMessage: "Do you want to create a communication controller:"
+    resources: [
+      { name: 'Communication/Controller/IndexController.php', type: file, template: '' },
+      { name: 'Communication/Controller/GatewayController.php', type: file, template: '' },
+      {
+        name: 'Communication/Controller/[communicationControllerName]Controller.php',
+        type: file,
+        template: '',
+        placeholder: [
+          { name: communicationControllerName, transform: [ lowerCase. toLower, camelCase, upperFirst ] },
+        ]
+      },
+    ]
+  step_2:
+    name: "communicationPluginConsumerModule"
+    type: "autocomplete"
+    path: ""
+    choicesSource: 'data/PROJECT/module/spryker.ndjson'
+    choicesSearchType: 'module'
+    required: true
+    message: "Please define a plugin consumer module name:"
+    confirmBeforeAsk: true
+    confirmMessage: "Do you want to create plugin?"
+    choices: [ ]
+  step_3:
+    name: "communicationPluginName"
+    type: "autocomplete"
+    required: true
+    message: "Please chose a plugin interface you would like to implement:"
+    choicesSource: 'data/PROJECT/zed.ndjson'
+    processIfDefined: communicationPluginConsumerModule
+    resources: [
+      {
+        name: 'Communication/Plugin/[communicationPluginConsumerModule]/[ModuleName][communicationPluginName].php',
+        type: file,
+        template: '',
+        processor: ./Processor/Php/Plugin,
+        placeholder: [
+          ModuleName,
+          { name: communicationPluginConsumerModule, transform: [ lowerCase. toLower, camelCase, upperFirst ] },
+          { name: communicationPluginName, transform: [ lowerCase, toLower, camelCase, upperFirst, dropSuffixInterface ] },
+        ]
+      },
+      {
+        name: 'Business/[communicationPluginName]/[communicationPluginName]Interface.php',
+        type: file,
+        template: '',
+        processor: ./Processor/Php/Interface,
+        placeholder: [
+          ModuleName,
+          { name: communicationPluginName, transform: [ lowerCase, toLower, camelCase, upperFirst, dropSuffixInterface, toModelName ] },
+        ]
+      },
+      {
+        name: 'Business/[communicationPluginName]/[communicationPluginName].php',
+        type: file,
+        template: '',
+        processor: ./Processor/Php/Model,
+        placeholder: [
+          ModuleName,
+          { name: communicationPluginName, transform: [ lowerCase, toLower, camelCase, upperFirst, dropSuffixInterface, toModelName ] },
+        ]
+      },
+    ]
+  step_4:
+    name: "communicationFormName"
+    type: "input"
+    required: true
+    skip: true
+    message: "Please define a form name:"
+    confirmBeforeAsk: true
+    confirmMessage: "Do you want to create a form?"
+    resources: [
+      {
+        name: 'Communication/Form/[communicationFormName]Form.php',
+        type: file,
+        template: '',
+        placeholder: [
+          { name: communicationFormName, transform: [ lowerCase. toLower, camelCase, upperFirst ] },
+        ]
+      },
+      {
+        name: 'Communication/Form/DataProvider/[communicationFormName]FormDataProvider.php',
+        type: file,
+        template: '',
+        placeholder: [
+          { name: communicationFormName, transform: [ lowerCase. toLower, camelCase, upperFirst ] },
+        ]
+      },
+    ]
+  step_5:
+    name: "communicationTableName"
+    type: "input"
+    required: true
+    skip: true
+    confirmBeforeAsk: true
+    confirmMessage: "Do you want to create a table?"
+    message: "Please define a table name:"
+    resources: [
+      {
+        name: 'Communication/Table/[communicationTableName]Table.php',
+        type: file,
+        template: '',
+        placeholder: [
+          { name: communicationTableName, transform: [ lowerCase. toLower, camelCase, upperFirst ] },
+        ]
+      },
+    ]
+resources: [
+  { name: 'Communication/navigation.xml', type: file, skip: true, template: '' },
+  {
+    name: 'Communication/[ModuleName]CommunicationFactory.php',
+    type: file,
+    skip: true,
+    template: '',
+    placeholder: [ModuleName]
+  },
+]
+

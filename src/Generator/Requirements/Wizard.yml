@@ -1,0 +1,109 @@
+questions:
+  step_0:
+    name: "targetVendor"
+    type: "select"
+    required: true
+    message: "What is the target vendor name?"
+    choices: []
+    allowCustom: true
+    choiceProvider: ./ChoiceProvider/VendorList
+
+  step_1:
+    name: "moduleName"
+    type: "input"
+    required: true
+    message: "What is the name of the new module?"
+
+  step_1_1:
+    name: "moduleDescription"
+    type: "input"
+    required: true
+    message: "Please provide description of the new module:"
+
+  step_2:
+    name: "targetLicense"
+    type: "select"
+    required: true
+    message: "Please chose desired licence:"
+    choices: [
+      { name: 'MIT', value: 'Mit' },
+      { name: 'Apache 2.0', value: 'Apache20' },
+      { name: 'GPLv3', value: 'GplV3' },
+      { name: 'Mozilla 2.0', value: 'Mozilla20' },
+      { name: 'Spryker', value: 'spryker' },
+      { name: 'Unlicensed', value: 'no' },
+    ]
+
+  step_2.1:
+    name: "targetContributionAgreement"
+    type: "select"
+    required: true
+    message: "Please chose contribution agreement template:"
+    choices: [
+      { name: 'Default', value: 'Default' },
+      { name: 'Spryker', value: 'Spryker' },
+    ]
+#
+#  step_3:
+#    name: "layer"
+#    type: "multiselect"
+#    message: "What is the target application layer?"
+#    path: "/src/Generator/Requirements/Layer"
+#    required: true
+#    choices: [
+#      { name: 'zed', value: 'zed' },
+#      { name: 'yves', value: 'yves' },
+#      #      { name: 'glue', value: 'glue' },
+#      #      { name: 'client', value: 'client' },
+#      #      { name: 'service', value: 'service' },
+#      #      { name: 'shared', value: 'shared' },
+#    ]
+
+#  step_3:
+#    name: "gitHubKey"
+#    type: "password"
+#    message: "Do you want to keep module repository private on GitHub?"
+#    path: ""
+#    required: false
+
+  step_4:
+    name: "privateRepo"
+    type: "list"
+    message: "Do you want to keep module repository private on GitHub?"
+    path: ""
+    required: true
+    choices: [
+      { name: 'yes', value: true },
+      { name: 'no', value: false },
+    ]
+
+  step_5:
+    name: "githubPro"
+    type: "list"
+    processIfDefined: privateRepo
+    message: "Do you have a pro account on Github?"
+    path: ""
+    required: true
+    choices: [
+      { name: 'yes', value: true },
+      { name: 'no', value: false },
+    ]
+
+resources: [
+  { name: '.github/workflows/ci.yml', type: file, template: 'Generator/Templates/General/CI.tpl', placeholder: [ ] },
+  { name: '.editorconfig', type: file, template: 'Generator/Templates/General/EditorConfig.tpl', placeholder: [ ] },
+  { name: '.integration.yml', type: file, template: '', placeholder: [ ] },
+  { name: '.gitattributes', type: file, template: 'Generator/Templates/General/GitAttributes.tpl', placeholder: [ ] },
+  { name: '.gitignore', type: file, template: 'Generator/Templates/General/GitIgnore.tpl', placeholder: [ ] },
+  { name: 'CHANGELOG.md', type: file, template: '', placeholder: [ ] },
+  { name: 'CONTRIBUTING.md', type: file, template: 'Generator/Templates/General/Contribution/[targetContributionAgreement].tpl', placeholder: [ targetContributionAgreement, { name: vendor, transform: [ toLower ] }, { name: ModuleName, transform: [ lowerCase, toLower, kebabCase ] }, { name: ReadMeModuleName, alias: ModuleName, transform: [ lowerCase, toLower, startCase ] } ] },
+  { name: 'README.md', type: file, template: 'Generator/Templates/General/Readme.tpl', placeholder: [ moduleDescription, { name: vendor, transform: [ toLower ] }, { name: ModuleName, transform: [ lowerCase, toLower, kebabCase ] }, { name: ReadMeModuleName, alias: ModuleName, transform: [ lowerCase, toLower, startCase ] } ] },
+  { name: 'LICENSE', type: file, template: 'Generator/Templates/General/License/[targetLicense].tpl', placeholder: [ targetLicense, Year, { name: LicenceOrganisation, transform: [ toLower ] } ] },
+#  { name: 'composer.json', processor: ./Processor/Composer, type: file, template: '', placeholder: [ ] },
+  { name: 'phpstan.neon', type: file, template: 'Generator/Templates/General/PhpStan.tpl', placeholder: [ ] },
+  { name: 'tooling.yml', type: file, template: 'Generator/Templates/General/Tooling.tpl', placeholder: [ ] },
+#  { name: 'tests', type: dir, template: '', placeholder: [ ] },
+  { name: 'tests/.keepme', type: file, template: '', placeholder: [ ] },
+]
+
+outputFolder: '/modules'

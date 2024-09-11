@@ -1,0 +1,24 @@
+layer: zed
+questions:
+  step_1:
+    name: "zed"
+    type: "multiselect"
+    message: "What would you like to include to the Zed layer?"
+    path: "/src/Generator/Requirements/Layer/Zed"
+    required: true
+    choices: [
+#      { name: 'presentation', value: 'presentation' },
+      { name: 'communication', value: 'communication' },
+      { name: 'business', value: 'business' },
+#      { name: 'persistence', value: 'persistence' },
+      #      { name: 'dependency', value: 'dependency' },
+    ]
+resources: [
+  { name: '[ModuleName]Config.php', type: file, template: 'Generator/Templates/Php/ModuleConfig.tpl', placeholder:
+    [
+      ModuleName,
+      {name: Namespace, transform: []}
+    ]
+  },
+  { name: '[ModuleName]DependencyProvider.php', type: file, skip: true, template: '', placeholder: [ ModuleName, Namespace ] },
+]
