@@ -1,6 +1,6 @@
 {
-  "name": "spryker-accelerator",
-  "version": "1.0.0",
+  "name": "genix",
+  "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",
   "type": "module",
@@ -17,7 +17,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@prettier/plugin-php": "^0.22.2",
     "@types/cli-progress": "^3.11.6",

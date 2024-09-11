@@ -3,7 +3,6 @@ import chalk from "chalk";
 import Cli from "./Cli";
 import Util from "./Util";
 import {Octokit} from "@octokit/rest";
-import SprykDefinition from "./SprykDefinition";
 import Environment from "../Env/Environment";
 import {existsSync} from "node:fs";
 
@@ -14,7 +13,6 @@ export default class Git {
     private readonly repoName: string;
     private readonly org: string;
     protected requirements: Configuration;
-    protected sprykDefinitions: SprykDefinition[] = [];
     protected gitClient: Octokit|null = null
     protected token:string
 
