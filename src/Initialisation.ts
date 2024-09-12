@@ -27,9 +27,9 @@ export default class Initialisation {
                 name: 'value',
                 //@ts-ignore
                 message: 'Please select project you would like to use as active:',
-                choices: Object.keys(projectList).map((key:string) => {
+                choices: Object.values(projectList).map((key:any) => {
                     return {
-                        name: key,
+                        name: key.name,
                         value: key
                     }
                 })
@@ -42,9 +42,9 @@ export default class Initialisation {
                 message: 'What is the target vendor name?',
             })
 
-            let githubKey:any = this.askForAccessToken()
+            let githubKey:any = await this.askForAccessToken()
 
-            new AppConfig(this.pathToAppConfig).process(project.value, vendor.value, githubKey.value)
+            new AppConfig(this.pathToAppConfig).process(project.value.name, project.value.value[project.value.name], vendor.value, githubKey.value)
         }
 
         return this.getEnvironment()
@@ -56,7 +56,7 @@ export default class Initialisation {
             name: 'value',
             //@ts-ignore
             message: 'Please provide GitHubKey for streamline integration'
-        })
+        });
     }
 
     private getProjectsList = () => {

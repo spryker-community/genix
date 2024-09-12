@@ -30,9 +30,9 @@ export default class Model extends Default {
         classCode += `namespace ${namespace};\n\n`;
 
         classCode += `\nclass ${className}\n{\n`;
-        classCode += `    public function get(): void \n    {\n`;
+        // classCode += `    public function get(): void \n    {\n`;
         // classCode += `        \n`;
-        classCode += `    }\n`;
+        // classCode += `    }\n`;
         classCode += `}\n`;
 
         return classCode;
