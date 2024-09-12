@@ -40,9 +40,12 @@ Switch to the project folder:
     cd genix
 
 
+Create .env file based on .env_template and defined path to the projects directory on your host machine. 
+
+
 Start docker container:
 
-    docker-compose run --rm  genix
+    docker-compose run genix
 
 
 ### Usage
@@ -51,7 +54,7 @@ To start the interactive terminal:
 
     genix
 
-You can follow the prompts to generate a new module, create plugins, and integrate with your Spryker project.
+You can follow the prompts to initialize projects, generate a new module, create plugins, and integrate with your Spryker project.
 
 ## Contributing
 
